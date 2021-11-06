@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous'>
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-group" style="margin-right: 35%; margin-left: 35%;"> 
+        <br>
+        <form action="/ninjas/create" method="POST" class="form-control borde border-primary">
+            <h2>Create Ninja</h2>
+            <label for="cars">Dojo Location</label>
+                <select name="dojo_id">
+                {%  for dojo in dojos  %}
+                <option value="{{dojo.id}}">{{dojo.name}}</option>
+                {%  endfor  %}
+                </select>
+                <div> <br></div>
+
+                <input class="form-control border border-primary" type="text" name="first_name" placeholder="First Name ">
+            <br>
+            <input class="form-control border border-primary" type="text" name="last_name" placeholder="Last Name">
+            <br>
+            <input class="form-control border border-primary" type="text" name="age" placeholder="Age">
+            <br>
+            <input class="btn btn-primary border border-primary" type="submit" value="Add Ninja">
+        </form>
+        <br>
+        <a href="/"><button class="btn btn-secondary">Return to Home</button></a>
+    </div >
+</body>
+</html>
